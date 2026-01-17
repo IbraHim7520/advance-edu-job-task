@@ -9,7 +9,7 @@ import { orderController } from './Modules/Orders/order.controller.js'
 
 
 const app = express()
-app.use(cors())
+app.use(cors({credentials:true , methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"] , allowedHeaders: ["Content-Type", "Authorization"],}))
 
 app.post('/api/stripe/webhook',
   raw({ type: 'application/json'}),
