@@ -21,8 +21,8 @@ const userSignupService = async (payload) => {
   return { success: true, user: userData };
 };
 
-const userLoginService = async (email) => {
-  const isUsr = await userModel.findOne({ email });
+const userLoginService = async (useremail) => {
+  const isUsr = await userModel.findOne({ email: useremail });
   if (!isUsr) return { success: false, message: "User not found" };
   return { success: true, user: isUsr };
 };
