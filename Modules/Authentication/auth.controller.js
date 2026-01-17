@@ -45,7 +45,7 @@ const userLoginControle = async (req, res) => {
     return res.status(400).json({ success: false, message: "All fields are required!" });
 
   try {
-    const userResponse = await userService.userLoginService(email, password);
+    const userResponse = await userService.userLoginService(email);
 
     if (!userResponse._id) {
       return res.status(404).json({ success: false, message: "User not found!" });

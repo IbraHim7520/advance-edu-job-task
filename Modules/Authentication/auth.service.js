@@ -24,7 +24,7 @@ const userSignupService = async (payload) => {
 const userLoginService = async (useremail) => {
   const isUsr = await userModel.findOne({ email: useremail });
   if (!isUsr) return { success: false, message: "User not found" };
-  return { success: true, user: isUsr };
+  return isUsr
 };
 
 export const userService = {
